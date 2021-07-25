@@ -2,6 +2,28 @@
 	"name": "BSPipeline",
 	"properties": {
 		"description": "Pipeline for Buyerscience - USF Integrative project",
+		"activities": [
+			{
+				"name": "BuyerScience_DataPrep",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/arumugamn@usf.edu/parq"
+				},
+				"linkedServiceName": {
+					"referenceName": "LSDatabricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
 		"annotations": []
 	}
 }

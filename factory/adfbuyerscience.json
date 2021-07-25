@@ -1,0 +1,9 @@
+{
+	"name": "adfbuyerscience",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3aecb141-2a6b-4d36-af06-ebf8f23b09c0",
+		"tenantId": "741bf7de-e2e5-46df-8d67-82607df9deaa"
+	}
+}

@@ -16,7 +16,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/arumugamn@usf.edu/parq"
+					"notebookPath": "/Users/arumugamn@gmail.com/parq"
 				},
 				"linkedServiceName": {
 					"referenceName": "LSDatabricks",

@@ -42,6 +42,9 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/natarajarumuga@gmail.com/buyerScience"
+				},
 				"linkedServiceName": {
 					"referenceName": "LSDatabricks",
 					"type": "LinkedServiceReference"

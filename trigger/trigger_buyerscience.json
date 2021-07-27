@@ -1,0 +1,29 @@
+{
+	"name": "trigger_buyerscience",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "BSPipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2021-07-27T04:26:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"monthDays": [
+						7
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "adbuyerscience",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dd201d68-0f4c-49a9-84cc-2e933424293d",
+		"tenantId": "fdb8c9ea-c124-4a14-82e4-b626e25a705c"
+	}
+}

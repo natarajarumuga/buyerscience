@@ -24,7 +24,7 @@
 				}
 			},
 			{
-				"name": "Notebook1",
+				"name": "BuyerScienceDashboard",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
@@ -41,7 +41,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "LSDatabricks",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []

@@ -23,7 +23,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/689856/natarajarumuga@gmail.com/buyerScience"
+					"notebookPath": "/Users/natarajarumuga@gmail.com/insta-buyerscience"
 				},
 				"linkedServiceName": {
 					"referenceName": "LSDatabricks",

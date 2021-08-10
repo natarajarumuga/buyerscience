@@ -4,7 +4,7 @@
 		"description": "Pipeline for Buyerscience - USF Integrative project",
 		"activities": [
 			{
-				"name": "BuyerScience_DataPrep",
+				"name": "BuyerScience_OnlineRetail",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{

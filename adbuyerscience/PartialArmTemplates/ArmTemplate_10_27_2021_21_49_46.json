@@ -6,34 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adbuyerscience"
-		},
-		"LSDatabricks_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'LSDatabricks'"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/LSDatabricks')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDatabricks",
-				"typeProperties": {
-					"domain": "https://adb-1298440721447507.7.azuredatabricks.net",
-					"accessToken": {
-						"type": "SecureString",
-						"value": "[parameters('LSDatabricks_accessToken')]"
-					},
-					"existingClusterId": "1024-230648-mvibv34u"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/BSPipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -89,10 +67,6 @@
 						}
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -100,39 +74,22 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger_buyerscience')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/LSDatabricks')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "BSPipeline",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "AzureDatabricks",
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Month",
-						"interval": 1,
-						"startTime": "2021-07-27T04:26:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"monthDays": [
-								7
-							]
-						}
-					}
+					"domain": "https://adb-1298440721447507.7.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"existingClusterId": "1024-230648-mvibv34u"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/BSPipeline')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

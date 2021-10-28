@@ -24,7 +24,34 @@
 				"description": "Pipeline for Buyerscience - USF Integrative project",
 				"activities": [
 					{
-						"name": "BuyerScience_DataPrep",
+						"name": "BuyerScience_OnlineRetail",
+						"type": "DatabricksNotebook",
+						"dependsOn": [
+							{
+								"activity": "BuyerScience_instacart",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"notebookPath": "/Users/natarajarumuga@gmail.com/onlineRetailbuyerScience"
+						},
+						"linkedServiceName": {
+							"referenceName": "LSDatabricks",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "BuyerScience_instacart",
 						"type": "DatabricksNotebook",
 						"dependsOn": [],
 						"policy": {
@@ -36,7 +63,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/natarajarumuga@gmail.com/buyerScience"
+							"notebookPath": "/Users/natarajarumuga@gmail.com/insta-buyerscience"
 						},
 						"linkedServiceName": {
 							"referenceName": "LSDatabricks",
@@ -44,6 +71,10 @@
 						}
 					}
 				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -63,7 +94,7 @@
 						"type": "SecureString",
 						"value": "[parameters('LSDatabricks_accessToken')]"
 					},
-					"existingClusterId": "0727-041116-clear193"
+					"existingClusterId": "1024-230648-mvibv34u"
 				}
 			},
 			"dependsOn": []
